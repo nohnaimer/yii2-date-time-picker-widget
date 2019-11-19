@@ -4,11 +4,12 @@
  * @link http://2amigos.us
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  */
+
 namespace dosamigos\datetimepicker;
 
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
+use yii\helpers\ArrayHelper;
 use yii\widgets\InputWidget;
 
 /**
@@ -55,12 +56,11 @@ class DateTimePicker extends InputWidget
     /**
      * @var string the icon to use on the reset button
      */
-    public $resetButtonIcon = 'glyphicon glyphicon-remove';
+    public $resetButtonIcon = 'fas fa-times';
     /**
-     * @var string the icon to use on the pickup button. Defaults to `glyphicon-th`. Other uses are `glyphicon-time` and
-     * `glyphicon-calendar`.
+     * @var string the icon to use on the pickup button. Defaults to `fas fa-th` Font Awesome.
      */
-    public $pickButtonIcon = 'glyphicon glyphicon-th';
+    public $pickButtonIcon = 'fas fa-th';
     /**
      * @var bool whether to render the input as an inline calendar
      */
@@ -94,14 +94,13 @@ class DateTimePicker extends InputWidget
      */
     public function run()
     {
-
         $input = $this->hasModel()
             ? Html::activeTextInput($this->model, $this->attribute, $this->options)
             : Html::textInput($this->name, $this->value, $this->options);
 
         if (!$this->inline) {
-            $resetIcon = Html::tag('span', '', ['class' => $this->resetButtonIcon]);
-            $pickIcon = Html::tag('span', '', ['class' => $this->pickButtonIcon]);
+            $resetIcon = Html::tag('i', '', ['class' => $this->resetButtonIcon]);
+            $pickIcon = Html::tag('i', '', ['class' => $this->pickButtonIcon]);
             $resetAddon = Html::tag('span', $resetIcon, ['class' => 'input-group-addon']);
             $pickerAddon = Html::tag('span', $pickIcon, ['class' => 'input-group-addon']);
         } else {

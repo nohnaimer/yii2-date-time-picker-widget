@@ -7,6 +7,7 @@
 namespace dosamigos\datetimepicker;
 
 use yii\web\AssetBundle;
+use yii\bootstrap4\BootstrapPluginAsset;
 
 /**
  * DateTimePickerAsset
@@ -28,6 +29,7 @@ class DateTimePickerAsset extends AssetBundle
     ];
 
     public $depends = [
-        'yii\bootstrap\BootstrapPluginAsset'
+        BootstrapPluginAsset::class,
+        FontAwesomeAsset::class,
     ];
 }
