@@ -7,7 +7,7 @@
 namespace dosamigos\datetimepicker;
 
 use yii\web\AssetBundle;
-use yii\bootstrap4\BootstrapPluginAsset;
+use yii\bootstrap5\BootstrapPluginAsset;
 
 /**
  * DateTimePickerAsset
